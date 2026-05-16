@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torchvision.models as models
+from torchvision.models import resnet50, ResNet50_Weights
 
 class EncoderCNN(nn.Module):
     def __init__(self, embed_size):
@@ -8,8 +9,8 @@ class EncoderCNN(nn.Module):
         super(EncoderCNN, self).__init__()
 
         # Load mô hình ResNet50 đã được train sẵn trên tập ImageNet
-        resnet=models.resnet50(pretrained=True)
-
+        resnet = resnet50(weights=ResNet50_Weights.DEFAULT)
+        
         # Cắt bỏ lớp FullyConnected (fc) cuối cùng vì không cần phân loại ảnh thành 1000 lớp
         # Chỉ cần lấy vector đặc trưng (feature vector) của bức ảnh
         modules=list(resnet.children())[:-1]

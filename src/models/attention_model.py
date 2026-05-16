@@ -1,12 +1,13 @@
 import torch
 import torch.nn as nn
 import torchvision.models as models
+from torchvision.models import resnet50, ResNet50_Weights
 
 class EncoderAttention(nn.Module):
     def __init__(self):
         super(EncoderAttention, self).__init__()
 
-        resnet=models.resnet50(pretrained=True)
+        resnet = resnet50(weights=ResNet50_Weights.DEFAULT)
 
         # Ở đây ta cắt bỏ 2 lớp cuối (Global Average Pooling và Fully Connected)
         # Mục đích là giữ lại cấu trúc không gian (spatial) của bức ảnh, không gộp lại thành 1 cục

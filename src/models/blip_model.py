@@ -51,7 +51,7 @@ class BlipCaptioner(torch.nn.Module):
 
         return outputs.loss
     
-    def generate_caption(self, raw_images, max_length=20):
+    def generate_caption(self, raw_images, max_length=50):
         # Dùng cho quá trình Đánh giá (Test/Inference)
         inputs = self.processor(images=raw_images, return_tensors="pt").to(self.model.device)
         out_ids = self.model.generate(**inputs, max_new_tokens=max_length)

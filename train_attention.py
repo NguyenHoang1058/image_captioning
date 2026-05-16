@@ -98,8 +98,8 @@ def main():
         print(f"=== Epoch [{epoch}/{num_epochs}] | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f} ===")
         
         # Lưu lại tệp trọng số (weights) sau mỗi epoch để sau này lấy ra Inference (dự đoán)
-        torch.save(encoder.state_dict(), f"encoder_epoch_{epoch}.pth")
-        torch.save(decoder.state_dict(), f"decoder_epoch_{epoch}.pth")
+        torch.save(encoder.state_dict(), f"checkpoints/attn_encoder_epoch_{epoch}.pth")
+        torch.save(decoder.state_dict(), f"checkpoints/attn_decoder_epoch_{epoch}.pth")
     
     # Vẽ và lưu biểu đồ khi vòng lặp for kết thúc
     print("\n[INFO] Đang xuất biểu đồ báo cáo...")

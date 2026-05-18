@@ -13,7 +13,7 @@
 
 **Bước 1: Clone mã nguồn về máy**
 ```bash
-# git clone [https://github.com/Tên-Github-Của-Bạn/image_captioning.git](https://github.com/Tên-Github-Của-Bạn/image_captioning.git)
+# git clone [https://github.com/NguyenHoang1058/image_captioning.git](https://github.com/NguyenHoang1058/image_captioning.git)
 # cd image_captioning
 
 **Bước 2: Cài môi trường**
@@ -21,6 +21,8 @@
 # python -m venv venv
 # source venv\Scripts\activate  # Trong trường lỗi thì chạy lệnh sau : venv\Scripts\Activate.ps1
 # pip install -r requirements.txt
+# Download thư mục checkpoint từ drive: đây là thư mục chứa các file trọng số tốt nhất sau khi train
+# Vị trí đặt thư mục trong source thì ngang cấp với các thư mục predict_blip.py
 
 **Bước 3: Demo**
 # Để chạy demo thì thực thi lệnh sau ở terminal

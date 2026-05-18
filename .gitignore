@@ -17,3 +17,12 @@ outputs/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Model weights and checkpoints
+checkpoints/
+*.pth
+*.pt
+*.safetensors
+
+# Data
+data/
